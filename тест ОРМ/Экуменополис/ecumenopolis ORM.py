@@ -374,13 +374,11 @@ async def __off_lvl(ctx, member: discord.Member = None):
     if member is None:
         user = session.query(User).filter(User.id == ctx.author.id).first()
         await ctx.send(embed=discord.Embed(
-            description=f"LVL пользователя **{ctx.author.name}** состовляет **{user.lvl}**"),
-            colour=discord.Color.orange())
+            description=f"LVL пользователя **{ctx.author.name}** состовляет **{user.lvl}**"))
     else:
         user = session.query(User).filter(User.id == member.id).first()
         await ctx.send(embed=discord.Embed(
-            description=f"LVL пользователя **{ctx.author.name}** состовляет **{user.lvl}**"),
-            colour=discord.Color.orange())
+            description=f"LVL пользователя **{ctx.author.name}** состовляет **{user.lvl}**"))
 
 
 @client.command(aliases=['clear', 'очистить'])
